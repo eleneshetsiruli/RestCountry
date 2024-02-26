@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Header } from "./Header";
+import { Filter } from "./Filter";
 export const Countries = () => {
   const url = " https://restcountries.com/v3.1/all";
 
@@ -15,13 +17,24 @@ export const Countries = () => {
 
   return (
     <>
+      <Header />
+      <Filter />
       <section className="grid">
         {countries.map((country) => {
-          const { numericCode, name, population, region, capital, flags } =
-            country;
+          const {
+            numericCode,
+            name,
+            population,
+
+            region,
+            capital,
+            flags,
+          } = country;
           return (
             <article key={numericCode}>
-              <img src={flags.svg} alt={name.common} />
+              <div>
+                <img src={flags.png} alt={name.common} />
+              </div>
               <div className="details">
                 <h3>{name.common}</h3>
                 <h4>
@@ -32,6 +45,7 @@ export const Countries = () => {
                   <span>region:</span>
                   {region}
                 </h4>
+
                 <h4>
                   <span>capital:</span>
                   {capital}

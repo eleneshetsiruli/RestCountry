@@ -43,18 +43,67 @@ body {
 .grid .details h4 span {
   font-weight: 300;
 }
-
-.grid .details {
+.details {
   background-color: #2b3743;
   padding: 40px 20px;
-  height: 200px;
+  height: 100%;
   border-radius: 0 0 5px 5px;
+  margin-top: -20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #2b3743;
+  align-items: center;
+  height: 70px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-direction: column;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.filter .form-control input {
+  background-color: #2b3743;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 8px;
+  font-family: inherit;
+  letter-spacing: 1px;
+  width: 100%;
+  margin: 0 0 30px;
+}
+
+.filter .region-filter {
+  width: 100%;
+}
+
+.filter .region-filter .select {
+  background-color: #2b3743;
+  color: white;
+  font-family: inherit;
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.filter .form-control input::placeholder {
+  color: white;
 }
 
 @media (min-width: 640px) {
