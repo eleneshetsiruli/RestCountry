@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./App.css";
-import { Countries } from "./components/Countries";
-import { Header } from "./components/Header";
-import { Filter } from "./components/Filter";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { Region } from "./components/Region";
+import { Countries } from "./components/Countries";
+import RegionContext from "./context/RegionContext";
 
 function App() {
+  const [regionValue, setRegionValue] = useState("asia");
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<Countries />} />
-      </Routes>
+      <RegionContext.Provider value={{ regionValue, setRegionValue }}>
+        <Routes>
+          <Route path="/" element={<Countries />} />
+          <Route path="countries" element={<Region />} />
+        </Routes>
+      </RegionContext.Provider>
     </div>
   );
 }
