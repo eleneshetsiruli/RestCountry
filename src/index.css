@@ -106,6 +106,15 @@ body {
   color: white;
 }
 
+.singleCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleCard span {
+  color: rgb(190, 179, 179);
+}
+
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

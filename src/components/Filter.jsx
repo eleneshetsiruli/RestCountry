@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
 import RegionContext from "../context/RegionContext";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { Countries } from "./Countries";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Filter = () => {
-  const { regionValue, setRegionValue } = useContext(RegionContext);
+  const { regionValue, setRegionValue, setSearchValue } =
+    useContext(RegionContext);
   const navigate = useNavigate();
-  function changeRegionValue(ev) {
+  function handleRegionValue(ev) {
     setRegionValue(ev.target.value);
-    navigate("/countries");
+    navigate(`countries`);
   }
-  console.log(regionValue);
 
   return (
     <section className="filter">
@@ -20,22 +19,25 @@ export const Filter = () => {
           name="search"
           id="search"
           placeholder="Search for  country"
+          onChange={(ev) => setSearchValue(ev.target.value)}
         />
       </form>
 
       <div className="region-filter">
         <select
-          onChange={changeRegionValue}
+          onChange={handleRegionValue}
           className="select"
           name="select"
           id="select"
         >
           <option value="Filter by region">Filter by region</option>
-          <option value="Africa">Africa</option>
+          <option onClick={() => changeRegionValue("africa")} value="Africa">
+            Africa
+          </option>
           <option value="America">america</option>
           <option value="Asia">asia</option>
           <option value="Europe">europe</option>
-          <option value="Oceania">oceania</option>
+          <option value="Oceania">ceania</option>
         </select>
       </div>
     </section>

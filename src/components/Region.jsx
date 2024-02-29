@@ -12,15 +12,15 @@ export const Region = () => {
     const data = await response.json();
     setRegion(data);
   }
-  console.log(region);
+
   useEffect(() => {
     getRegionData();
   }, [regionValue]);
-  console.log(region);
+
   return (
     <div className="grid">
-      {region.map((el) => {
-        return <Card data={el} />;
+      {region.map((el, i) => {
+        return <Card key={i} data={el} />;
       })}
     </div>
   );
