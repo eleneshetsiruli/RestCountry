@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<Countries />} />
           <Route path="countries" element={<Region />} />
           <Route path="countries/:id" element={<SinglePage />} />
+          <Route path="countries/countries/:id" element={<SinglePage />} />
         </Routes>
       </RegionContext.Provider>
     </div>
